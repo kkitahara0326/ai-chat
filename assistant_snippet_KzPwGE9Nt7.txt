@@ -1,0 +1,18 @@
+1|1|# 現在の状態を確認
+2|2|git status
+3|3|
+4|4|# 変更をコミット
+5|5|git add .
+6|6|git commit -m "Clean up before filter-branch"
+7|7|
+8|8|# .nextディレクトリを削除して履歴をクリーン
+9|9|rm -rf .next
+10|10|git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch .next/cache' --prune-empty --tag-name-filter cat -- --all
+11|11|
+12|12|# 参照とガベージコレクション
+13|13|git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+14|14|git reflog expire --expire=now --all
+15|15|git gc --prune=now --aggressive
+16|16|
+17|17|# 強制プッシュ
+18|18|git push origin --force --all 
