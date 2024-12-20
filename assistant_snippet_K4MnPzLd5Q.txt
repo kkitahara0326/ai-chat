@@ -1,0 +1,9 @@
+1|1|# 現在の変更をコミット
+2|2|git add .
+3|3|git commit -m "Clean up before filter-repo"
+4|4|
+5|5|# filter-repoを使用して.nextディレクトリを削除
+6|6|git filter-repo --path-glob '.next/*' --invert-paths --force
+7|7|
+8|8|# 強制プッシュ
+9|9|git push origin --force --all 

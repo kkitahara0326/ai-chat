@@ -1,4 +1,0 @@
-1|git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -10 
-2|git rev-list --objects --all | grep 5547065732f080446b90684cd14d286b8b0f15a9
-3|git rev-list --objects --all | grep f5ee3970cbdd609eee41c516d04f933849387afe
-4|git rev-list --objects --all | grep 622e004320b73264d3162eb8d42c5c74b4396963 

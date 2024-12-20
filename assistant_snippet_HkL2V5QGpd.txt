@@ -1,3 +1,0 @@
-1|git rev-list --objects --all | grep 5547065732f080446b90684cd14d286b8b0f15a9
-2|git rev-list --objects --all | grep f5ee3970cbdd609eee41c516d04f933849387afe
-3|git rev-list --objects --all | grep 5846382a1d00fad26e024b7d69b0ab0b7fdc56a4 

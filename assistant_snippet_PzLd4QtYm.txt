@@ -1,2 +1,0 @@
-1|git config --global user.name "東野誉"
-2|git config --global user.email "あなたのメールアドレス" 
