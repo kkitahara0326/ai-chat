@@ -1,1 +1,15 @@
- 
+1|# 現在の状態を確認
+2|git status
+3|
+4|# 全ての変更をコミット
+5|git add .
+6|git commit -m "Clean up all changes"
+7|
+8|# node_modulesを履歴から削除（再度実行）
+9|git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch node_modules' --prune-empty --tag-name-filter cat -- --all
+10|
+11|# ガベージコレクション
+12|git gc --aggressive --prune=now
+13|
+14|# 強制プッシュ
+15|git push origin --force --all 
